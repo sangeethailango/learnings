@@ -1,0 +1,19 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+
+#chat-container{
+  display: flex;
+  border: 1px solid grey;
+  padding: 1em;
+  margin: -1em 1em 1m -1em;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+}
+
+#chat-messages{
+    flex-grow: 1;
+}
