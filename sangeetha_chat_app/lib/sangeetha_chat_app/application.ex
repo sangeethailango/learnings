@@ -10,13 +10,15 @@ defmodule SangeethaChatApp.Application do
     children = [
       SangeethaChatAppWeb.Telemetry,
       SangeethaChatApp.Repo,
-      {DNSCluster, query: Application.get_env(:sangeetha_chat_app, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:sangeetha_chat_app, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: SangeethaChatApp.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: SangeethaChatApp.Finch},
       # Start a worker by calling: SangeethaChatApp.Worker.start_link(arg)
       # {SangeethaChatApp.Worker, arg},
       # Start to serve requests, typically the last entry
+      SangeethaChatAppWeb.Presence,
       SangeethaChatAppWeb.Endpoint
     ]
 

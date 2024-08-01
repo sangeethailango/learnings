@@ -18,6 +18,8 @@ defmodule SangeethaChatAppWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/list_of_channels", ChatLive.Channels
+    live "/:chat_room", ChatLive.ChatRoom
   end
 
   # Other scopes may use custom stacks.
